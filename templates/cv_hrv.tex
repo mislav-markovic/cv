@@ -1,0 +1,137 @@
+\documentclass[a4paper]{article}
+
+\usepackage[
+    top=0.79in,
+    bottom=0.79in,
+    left=0.79in,
+    right=0.79in,
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{10pt}
+\newlength{\tablewidth}
+
+\setlist[itemize]{topsep=0em, itemsep=0.0em}
+\setlist[itemize,1]{before=\vspace{-1em}}
+
+\newenvironment{period}[2]{%
+\newcommand{\sarma}{#2}%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.75\tablewidth}>{\raggedleft\arraybackslash}p{0.25\tablewidth}@{}}%
+#1 \newline
+\begin{itemize}
+}{%
+\end{itemize} & \sarma \\%
+\end{tabular}\\
+}
+
+\newenvironment{skills}{%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.15\tablewidth}p{0.85\tablewidth}@{}}
+}{%
+\end{tabular}
+}
+
+\newenvironment{projects}{%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.9\tablewidth}>{\raggedleft\arraybackslash}p{0.1\tablewidth}@{}}%
+}{%
+\end{tabular}
+}
+
+\titleformat{\section}{\uppercase}{}{0pt}{}[{\vspace{0.5em}\titlerule}]
+\titleformat{\subsection}{\bf}{}{0pt}{}{}
+\titlespacing{\section}{0pt}{1em}{0.5em}
+\titlespacing{\subsection}{0pt}{0pt}{0.1em}
+
+\begin{document}
+\fontfamily{\sfdefault}
+\selectfont
+
+\begin{minipage}{.5\textwidth}
+\LARGE{Mislav Marković}\\
+\normalsize{Bukovnička 19, 47 300 Ogulin, Hrvatska}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\raggedleft
+\href{mailto:mislav.markovic95@gmail.com}{mislav.markovic95@gmail.com} \\
++385 91 988 6471 \\
+\href{https://github.com/mislav-markovic}{github.com/mislav-markovic}
+\end{minipage}
+
+\vspace{1em}
+
+\section{radno iskustvo}
+\subsection{AVL, Zagreb, Hrvatska}
+\begin{period}{Pripravnik programskog in\v{z}enjerstva}{03.2018 -- 02.2020}
+    \item 
+        Odr\v{z}avanje informacijskog sustava za pohranu i replikaciju rezultata mjerenja.
+        \begin{itemize}
+            \item C\#, C++, Git, TFS
+        \end{itemize}
+        \item 
+        Razvoj i automatizirano testiranje radnog okvira za stati\v{c}ku parametrizaciju testa.
+        \begin{itemize}
+            \item C\#, Git
+        \end{itemize}
+\end{period}
+
+
+\section{Obrazovanje}
+\subsection{Sveu\v{c}ili\v{s}te u Zagrebu, Fakultet elektrotehnike i ra\v{c}unarstva, Hrvatska}
+\begin{period}{Magistar in\v{z}enjer ra\v{c}unarstva}{2017 -- 2020}
+    \item diplomski rad:
+        \textit{Analizator dnevnika informacijskog sustava}
+\end{period}
+
+\begin{period}{Sveu\v{c}ili\v{s}ni prvostupnik (baccalaureus) in\v{z}enjer ra\v{c}unarstva}{2014 -- 2017}
+    \item diplomski rad:
+        \textit{Programska potpora za galeriju umjetnina}
+    \item polo\v{z}ena vje\v{s}tina \textit{Osnove programskog jezika Java}
+\end{period}
+
+
+\section{Projekti}
+\begin{projects}
+	\href{https://github.com/mislav-markovic/sawmill}{Analizator dnevnika informacijskog sustava} (C\#, .NET Core, ASP.NET Core, JavaScript, Vue.js 2, Microsoft SQL Server) & 2020 \\
+	\href{https://github.com/mislav-markovic/bioinformatics}{Implementacija Ukkonenovog algoritma za on-line izgradnju sufiksnog stabla} (C++) & 2019 \\
+	\href{https://github.com/mislav-markovic/p-p-i-j}{Web aplikacija za ocjenjivanje sveu\v{c}ili\v{s}nih profesora i kolegija} (C\#, ASP.NET Core, MSSQL) & 2017 \\
+\end{projects}
+
+
+\section{Tehni\v{c}ke vje\v{s}tine}
+\begin{skills}
+    \mbox{Dobro poznavanje} &
+    \begin{itemize}
+        \item \textbf{C\# (.NET, .NET Core)} -- korišten tijekom raznih kolegija, projekata i u AVLu
+        \item \textbf{ASP.NET Core} -- korišten tijekom raznih kolegija 
+        \item \textbf{GIT} -- korišten u AVLu i tijekom raznih projekata
+    \end{itemize} \\
+    \mbox{Osnovno poznavanje} &
+    \begin{itemize}
+        \item \textbf{C++} -- korišten tijekom raznih kolegija i u AVLu
+        \item \textbf{TFS} -- korišten u AVLu
+        \item \textbf{Rust} -- korišten u osobnim projektima
+        \item \textbf{JavaScript} -- korišten tijekom raznih kolegija
+    \end{itemize} \\
+\end{skills}
+
+\section{ostale vje\v{s}tine i interesi}
+\begin{skills}
+    Jezici & \quad Hrvatski (materinji), Engleski (te\v{c}no) \\
+    Interesi & \quad Programiranje, \v{S}ah \\
+    \mbox{Vođenje projekta} & \quad Scrum, Agile \\
+\end{skills}
+
+\end{document}

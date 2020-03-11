@@ -1,0 +1,141 @@
+\documentclass[a4paper]{article}
+
+\usepackage[
+    top=0.79in,
+    bottom=0.79in,
+    left=0.79in,
+    right=0.79in,
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{10pt}
+\newlength{\tablewidth}
+
+\setlist[itemize]{topsep=0em, itemsep=0.0em}
+\setlist[itemize,1]{before=\vspace{-1em}}
+
+\newenvironment{period}[2]{%
+\newcommand{\sarma}{#2}%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.75\tablewidth}>{\raggedleft\arraybackslash}p{0.25\tablewidth}@{}}%
+#1 \newline
+\begin{itemize}
+}{%
+\end{itemize} & \sarma \\%
+\end{tabular}\\
+}
+
+\newenvironment{skills}{%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.15\tablewidth}p{0.85\tablewidth}@{}}
+}{%
+\end{tabular}
+}
+
+\newenvironment{projects}{%
+\setlength{\tablewidth}{\linewidth}
+\addtolength{\tablewidth}{-2\tabcolsep}
+\begin{tabular}{@{}p{0.9\tablewidth}>{\raggedleft\arraybackslash}p{0.1\tablewidth}@{}}%
+}{%
+\end{tabular}
+}
+
+\titleformat{\section}{\uppercase}{}{0pt}{}[{\vspace{0.5em}\titlerule}]
+\titleformat{\subsection}{\bf}{}{0pt}{}{}
+\titlespacing{\section}{0pt}{1em}{0.5em}
+\titlespacing{\subsection}{0pt}{0pt}{0.1em}
+
+\begin{document}
+\fontfamily{\sfdefault}
+\selectfont
+
+\begin{minipage}{.5\textwidth}
+\LARGE{Mislav Marković}\\
+\normalsize{Bukovnička 19, 47 300 Ogulin, Croatia}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\raggedleft
+\href{mailto:mislav.markovic95@gmail.com}{mislav.markovic95@gmail.com} \\
++385 91 988 6471 \\
+\href{https://github.com/mislav-markovic}{github.com/mislav-markovic}
+\end{minipage}
+
+\vspace{1em}
+
+\section{work experience}
+\subsection{AVL, Zagreb, Croatia}
+\begin{period}{Software Engineering Intern}{Mar 2018 -- Feb 2020}
+    \item 
+        Worked on maintenance of system for result measurement replication and storage.
+        \begin{itemize}
+            \item C\#, C++, Git, TFS
+        \end{itemize}
+        \item 
+        Worked on development and automated testing of framework for static parametrization of testbed.
+        \begin{itemize}
+            \item C\#, Git
+        \end{itemize}
+\end{period}
+
+
+\section{education}
+\subsection{University of Zagreb, Faculty of Electrical Engineering and Computing, Croatia}
+\begin{period}{MSc in Software Engineering and Information Systems}{Sep 2017 -- Feb 2020}
+    \item thesis:
+        \textit{Information system log analyser}
+			\begin{itemize}
+			    \item Technologies used: C\#, ASP.NET Core, Vue.js, SQL Database
+			\end{itemize}
+\end{period}
+
+\begin{period}{BSc in Software Engineering and Information Systems}{Sep 2014 -- Jul 2017}
+    \item thesis:
+        \textit{Art Gallery Software}
+			\begin{itemize}
+				\item Technologies used: C\#, ASP.NET Core, SQL Database
+			\end{itemize}
+    \item completed optional course \textit{Introduction to Java Programming Language}
+\end{period}
+
+
+\section{Projects}
+\begin{projects}
+	\href{https://github.com/mislav-markovic/sawmill}{Information system log analyser} (C\#, .NET Core, ASP.NET Core, JavaScript, Vue.js 2, Microsoft SQL Server) & 2020 \\
+	\href{https://github.com/mislav-markovic/bioinformatics}{Implementation of Ukkonens algorithm for on-line construction of suffix trees} (C++) & 2019 \\
+	\href{https://github.com/mislav-markovic/p-p-i-j}{Web application for rating and reviewing of university professors and courses} (C\#, ASP.NET Core, MSSQL) & 2017 \\
+\end{projects}
+
+
+\section{technical skills}
+\begin{skills}
+    Intermediate &
+    \begin{itemize}
+        \item \textbf{C\# (.NET, .NET Core)} -- used in university courses, various projects and in AVL
+        \item \textbf{ASP.NET Core} -- used in university courses
+        \item \textbf{GIT} -- used in AVL and various projects
+    \end{itemize} \\
+    Basic &
+    \begin{itemize}
+        \item \textbf{C++} -- used in university courses and AVL
+        \item \textbf{TFS} -- used in AVL
+        \item \textbf{Rust} -- used in hobby projects
+        \item \textbf{JavaScript} -- used in university courses
+    \end{itemize} \\
+\end{skills}
+
+\section{other skills and interests}
+\begin{skills}
+    Languages & \quad Croatian (native), English (fluent) \\
+    Interests & \quad Programming, Chess \\
+    \mbox{Project management} & \quad Scrum, Agile \\
+\end{skills}
+
+\end{document}
